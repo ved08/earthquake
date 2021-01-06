@@ -4,10 +4,10 @@
 #ask for magnitude
 #have a paragraph ready
 import tweepy
-consumer_key = "Uwl6smMGgoC5vYU7cPfU1pOU9"
-consumer_secret = "ppyuSbRGI18bNZKAfUTpn3mEXtvyOFHn3Y1DK50LQ0m7oHLtHk"
-access_token = "1116939101717127168-g3lqWNUGMg9iBpAEPBuSVVdVlPcXOc"
-access_token_secret = "rY184j72O2fgPVanfsiVnllfW66mJIqoj7jx1qix9glFI"
+consumer_key = " "
+consumer_secret = " "
+access_token = " "
+access_token_secret = " "
 
 
 def authenticate_api():
