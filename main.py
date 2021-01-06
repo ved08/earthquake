@@ -4,10 +4,10 @@
 #ask for magnitude
 #have a paragraph ready
 import tweepy
-consumer_key = " "
-consumer_secret = " "
-access_token = " "
-access_token_secret = " "
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
 
 
 def authenticate_api():
@@ -22,12 +22,13 @@ def authenticate_api():
 def main():
     api = authenticate_api()
     # Post tweet
-    tweet = api.update_status(f"Hey, this is Sakardharan with an earthquake forecast. I predict that on {credentials.date} an earthquake of {credentials.magnitude} will occur at {credentials.location}. These are just predictions, but, prevention is better than cure :D ") #sankardharan is just a random name
+    tweet = api.update_status(f"Hey, this is Sakardharan with an earthquake forecast. I predict that on '{credentials.date}' an earthquake of '{credentials.magnitude}' will occur at '{credentials.location}'. These are just predictions, but, prevention is better than cure :D ") #sakardharan is just a random name :D
     print('tweet has been tweeted')
 
 class credentials():
     date=(input('PLEASE ENTER THE DATE कृपया तारीख लिखें: '))
     location=(input('PLEASE ENTER THE LOCATION कृपया स्थान लिखें: '))
     magnitude=(input('PLEASE ENTER THE MAGNITUDE कृपया परिमाण लिखिए: '))
+
 credentials()
 main ()
