@@ -4,11 +4,12 @@
 #ask for magnitude
 #have a paragraph ready
 import tweepy
-consumer_key = ""
-consumer_secret = ""
-access_token = ""
-access_token_secret = ""
-
+from termcolor import colored
+import tkinter as tk
+consumer_key = " "
+consumer_secret = " "
+access_token = " "
+access_token_secret = " "
 
 def authenticate_api():
     try:
@@ -22,13 +23,48 @@ def authenticate_api():
 def main():
     api = authenticate_api()
     # Post tweet
-    tweet = api.update_status(f"Hey, this is Sakardharan with an earthquake forecast. I predict that on '{credentials.date}' an earthquake of '{credentials.magnitude}' will occur at '{credentials.location}'. These are just predictions, but, prevention is better than cure :D ") #sakardharan is just a random name :D
+    tweet = api.update_status("Hey, this is Sakardharan with an earthquake forecast. I predict that on %s an earthquake of %s will occur at %s. These are just predictions, but, prevention is better than cure :D " % (e1.get(), e3.get(),e2.get())) #sakardharan is just a random name :D
     print('tweet has been tweeted')
 
-class credentials():
-    date=(input('PLEASE ENTER THE DATE कृपया तारीख लिखें: '))
-    location=(input('PLEASE ENTER THE LOCATION कृपया स्थान लिखें: '))
-    magnitude=(input('PLEASE ENTER THE MAGNITUDE कृपया परिमाण लिखिए: '))
+master = tk.Tk()
+tk.Label(master, 
+         text="DATE दिनांक").grid(row=0, column=0 )
+tk.Label(master, 
+         text="LOCATION स्थान").grid(row=1)
+tk.Label(master, 
+         text="MAGNITUDE परिमाण").grid(row=2)
 
-credentials()
-main ()
+e1 = tk.Entry(master)
+e2 = tk.Entry(master)
+e3 = tk.Entry(master)
+
+e1.grid(row=0, column=1)
+e2.grid(row=1, column=1)
+e3.grid(row=2, column=1)
+
+tk.Button(master, 
+          text='Quit', 
+          command=master.quit).grid(row=3, 
+                                    column=0, 
+                                    sticky=tk.W, 
+                                    pady=4)
+tk.Button(master, 
+          text='Show', command=main).grid(row=3, 
+                                                       column=1, 
+                                                       sticky=tk.W, 
+                                                       pady=4)
+
+tk.mainloop()
+
+
+
+
+    
+
+# class credentials():
+#     date=(input('PLEASE ENTER THE DATE कृपया तारीख लिखें: '))
+#     location=(input('PLEASE ENTER THE LOCATION कृपया स्थान लिखें: '))
+#     magnitude=(input('PLEASE ENTER THE MAGNITUDE कृपया परिमाण लिखिए: '))
+
+# credentials()
+
